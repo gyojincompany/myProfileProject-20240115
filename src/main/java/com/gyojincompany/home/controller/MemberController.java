@@ -14,14 +14,10 @@ public class MemberController {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	@RequestMapping(value = "/test")
-	public String test(Model model) {
+	@RequestMapping(value = "/")
+	public String index() {
 		
-		BoardDao dao = sqlSession.getMapper(BoardDao.class);
-		
-		model.addAttribute("title", dao.testDao("1"));
-		
-		return "test";
+		return "index";
 	}
 
 }

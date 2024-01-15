@@ -15,6 +15,12 @@ public class MemberController {
 	private SqlSession sqlSession;
 	
 	@RequestMapping(value = "/")
+	public String root() {
+		
+		return "index";
+	}
+	
+	@RequestMapping(value = "/index")
 	public String index() {
 		
 		return "index";

@@ -8,14 +8,16 @@
 <title>## My Profile</title>
 </head>
 <body>
+	<%@ include file="include/header.jsp" %>
+	<center>
 	<table border="0" cellpadding="20" cellspacing="0">
 		<tr>
-			<td>
+			<td align="center">
 				<span class="title01">DEVELOPER GYOJIN's PROFILE</span>
 			</td>
 		</tr>
 		<tr>
-			<td>
+			<td align="center">
 				<span class="title02">I'm Gyojin Lee, a developer who wants a development job. Please call me back.</span>
 			</td>
 		</tr>
@@ -60,5 +62,7 @@
 			</td>
 		</tr>
 	</table>
+	</center>
+	<%@ include file="include/footer.jsp" %>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 td.con_box {
 	background-color: #DCF2F1;
-	height: 500px;
+	height: 500px;	
 }
 
 td.con_text {
@@ -10,6 +10,7 @@ td.con_text {
 	font-family: malgun;
 	color: #365486;
 	font-weight: bold;
+	text-align: right;
 }
 
 input.input_box01 {

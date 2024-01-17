@@ -1,5 +1,8 @@
 package com.gyojincompany.home.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +15,7 @@ import com.gyojincompany.home.dao.MemberDao;
 import com.gyojincompany.home.dto.MemberDto;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -83,6 +87,22 @@ public class MemberController {
 		}
 		
 		return "loginOk";
+	}
+	
+	@GetMapping(value = "/logout")
+	public String logout(HttpSession session, HttpServletResponse response) throws IOException {
+		
+		session.invalidate();//세션 삭제->로그 아웃
+		
+		response.setContentType("text/html;charset=utf-8");//utf-8로 경고창에 출력될 문자셋 셋팅
+		response.setCharacterEncoding("utf-8");
+		
+		PrintWriter printout = response.getWriter();
+		
+		printout.println("<script>alert('"+ "로그아웃 하시겠습니까?" +"');location.href='"+"login"+"';</script>");
+		printout.flush();
+		
+		return "login";
 	}
 
 }

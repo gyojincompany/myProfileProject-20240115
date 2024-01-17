@@ -104,5 +104,31 @@ public class MemberController {
 		
 		return "login";
 	}
+	
+	@GetMapping(value = "/modify")
+	public String modify(HttpServletRequest request, Model model, HttpSession session) {
+		
+		MemberDao dao = sqlSession.getMapper(MemberDao.class);
+		
+		MemberDto memberDto = dao.memberInfoDao((String)session.getAttribute("sessionId"));
+		
+		model.addAttribute("memberDto", memberDto);
+		
+		return "modifyForm";
+	}
+	
+	@PostMapping(value = "/modifyOk")
+	public String modifyOk(HttpServletRequest request, Model model) {
+		
+		MemberDao dao = sqlSession.getMapper(MemberDao.class);
+		dao.modifyInfoDao(request.getParameter("mid"), request.getParameter("mpw"), request.getParameter("mname"), request.getParameter("memail"));
+		
+		MemberDto memberDto = dao.memberInfoDao(request.getParameter("mid"));
+		
+		model.addAttribute("memberDto", memberDto);//수정된 후의 회원정보가 modifyOk.jsp로 전송
+		
+		
+		return "modifyOk";
+	}
 
 }

@@ -18,7 +18,7 @@
 				<a href="#"><span class="menutext">login</span></a>
 			</td>
 			<td width="4%" align="center">
-				<a href="#"><span class="menutext">join</span></a>
+				<a href="join"><span class="menutext">join</span></a>
 			</td>
 			<td width="4%" align="center">
 				<a href="#"><span class="menutext">profile</span></a>

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.gyojincompany.home.dao.BoardDao;
+import com.gyojincompany.home.dao.MemberDao;
 
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -39,7 +39,7 @@ public class MemberController {
 	@PostMapping(value = "/joinOk")
 	public String joinOk(HttpServletRequest request, Model model) {
 		
-		BoardDao dao = sqlSession.getMapper(BoardDao.class);
+		MemberDao dao = sqlSession.getMapper(MemberDao.class);
 		
 		int checkFlag = dao.idCheckDao(request.getParameter("mid"));
 		//checkFlag가 0이면 회원가입가능, 1이면 회원가입불가

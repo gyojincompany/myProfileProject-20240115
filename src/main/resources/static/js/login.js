@@ -3,7 +3,7 @@
  */
 
  function loginCheck() {
-	 if(document.logForm.mid.value.length == 0) {
+	 if(document.loginForm.mid.value.length == 0) {
 		 alert("아이디를 입력해주세요.");
 		 return;
 	 }

@@ -8,13 +8,13 @@ public class MemberDto {
 	private String pw;//회원비밀번호
 	private String mname;//회원이름
 	private String memail;//회원이메일
-	private Timestamp mdate;//회원등록일
+	private String mdate;//회원등록일
 	
 	public MemberDto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public MemberDto(String mid, String pw, String mname, String memail, Timestamp mdate) {
+	public MemberDto(String mid, String pw, String mname, String memail, String mdate) {
 		super();
 		this.mid = mid;
 		this.pw = pw;
@@ -46,10 +46,10 @@ public class MemberDto {
 	public void setMemail(String memail) {
 		this.memail = memail;
 	}
-	public Timestamp getMdate() {
+	public String getMdate() {
 		return mdate;
 	}
-	public void setMdate(Timestamp mdate) {
+	public void setMdate(String mdate) {
 		this.mdate = mdate;
 	}
 	

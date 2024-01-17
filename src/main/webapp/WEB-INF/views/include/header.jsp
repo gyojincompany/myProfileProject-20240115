@@ -15,7 +15,7 @@
 				<a href="index"><span class="menutext">home</span></a>
 			</td>
 			<td width="4%" align="center">
-				<a href="#"><span class="menutext">login</span></a>
+				<a href="login"><span class="menutext">login</span></a>
 			</td>
 			<td width="4%" align="center">
 				<a href="join"><span class="menutext">join</span></a>

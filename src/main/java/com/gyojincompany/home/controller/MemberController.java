@@ -54,6 +54,16 @@ public class MemberController {
 		return "joinOk";
 	}
 	
+	@GetMapping(value = "/login")
+	public String login() {
+		
+		return "login";
+	}
 	
+	@PostMapping(value = "/loginOk")
+	public String loginOk(HttpServletRequest request, Model model) {
+		
+		return "loginOk";
+	}
 
 }

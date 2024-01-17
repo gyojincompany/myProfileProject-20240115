@@ -13,6 +13,14 @@ td.con_text {
 	text-align: right;
 }
 
+td.con_text02 {
+	font-size: 20px;
+	font-family: malgun;
+	color: #365486;
+	font-weight: bold;
+	text-align: center;
+}
+
 input.input_box01 {
 	border: 1px solid #365486;
 	background-color: #FFFFFF;
@@ -33,6 +41,21 @@ input.con_btn01 {
 	color: #FFFFFF;
 	padding: 5px;
 }
+
+input.con_btn01:hover {
+	border: 2px solid #365486;
+	background-color: #2e869c;
+	width: 180px;
+	height: 40px;
+	font-family: malgun;
+	font-size: 20px;
+	color: #FFFFFF;
+	padding: 5px;
+	cursor: pointer;
+}
+
+
+
 
 
 

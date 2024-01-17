@@ -23,7 +23,7 @@
 		 alert("이메일은 필수 입력사항입니다. 다시 확인해 주세요.");
 		 return;
 	 }
-	 if(document.joinForm.mpw.value == document.joinForm.mpw_check.value) {
+	 if(document.joinForm.mpw.value != document.joinForm.mpw_check.value) {
 		 alert("비밀번호가 비밀번호확인과 일치하지 않습니다. 다시 확인해 주세요.");
 		 return;
 	 }

@@ -10,4 +10,14 @@
 		SELECT * FROM qaboard ORDER BY qbnum DESC
 	</select>
 	
+	<!-- 게시판 글 쓰기 -->
+	<insert id="writeDao">
+		INSERT INTO qaboard(qbnum, qbmid, qbmname, qbmemail, qbtitle, qbcontent) VALUES(qaboard_seq.nextval,#{param1},#{param2},#{param3},#{param4},#{param5})
+	</insert>
+	
+	<!-- 게시판 번호로 해당 번호의 글 가져오기 -->
+	<select id="contentViewDao" resultType="com.gyojincompany.home.dto.QAboardDto">
+		SELECT * FROM qaboard WHERE qbnum=#{param1}
+	</select>
+	
 </mapper>    

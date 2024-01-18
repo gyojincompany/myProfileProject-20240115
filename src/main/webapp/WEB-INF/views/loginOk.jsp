@@ -48,7 +48,7 @@
 					</tr>
 					<tr>
 						<td align="center">							
-							<input class="con_btn01" type="button" value="질문게시판" onclick="javascript:window.location.href='#'">
+							<input class="con_btn01" type="button" value="질문게시판" onclick="javascript:window.location.href='board'">
 						</td>
 					</tr>
 				</form>

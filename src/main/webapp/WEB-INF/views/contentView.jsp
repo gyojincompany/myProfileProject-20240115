@@ -30,24 +30,30 @@
 				<form action="write" name="writeForm">
 					<tr>
 						<td class="con_text">아 이 디 :</td>
-						<td><input class="input_box01" type="text" name="qbmid" value="${memberDto.mid}" readonly="readonly"></td>
+						<td><input class="input_box01" type="text" name="qbmid" value="${boardDto.qbmid}" readonly="readonly"></td>
 					</tr>					
 					<tr>
 						<td class="con_text">이 름 :</td>
-						<td><input class="input_box01" type="text" name="qbmname" value="${memberDto.mname }" readonly="readonly"></td>
+						<td><input class="input_box01" type="text" name="qbmname" value="${boardDto.qbmname }" readonly="readonly"></td>
 					</tr>					
 					<tr>
 						<td class="con_text">이 메 일 :</td>
-						<td><input class="input_box01" type="text" name="qbmemail" value="${memberDto.memail }" readonly="readonly"></td>
+						<td><input class="input_box01" type="text" name="qbmemail" value="${boardDto.qbmemail }" readonly="readonly"></td>
 					</tr>
 					<tr>
 						<td class="con_text">제 목 :</td>
-						<td><input class="input_box01" type="text" name="qbtitle"></td>
+						<td><input class="input_box01" type="text" name="qbtitle" value="${boardDto.qbtitle }" readonly="readonly"></td>
 					</tr>
 					<tr>
 						<td class="con_text">내 용 :</td>
 						<td>
-							<textarea class="btextarea" rows="10" cols="35" name="qbcontent"></textarea>
+							<textarea class="btextarea" rows="10" cols="35" name="qbcontent" readonly="readonly">${boardDto.qbcontent }</textarea>
+						</td>
+					</tr>
+					<tr>
+						<td class="con_text">등록일 :</td>
+						<td>
+							<input class="input_box01" type="text" name="qbdate" value="${boardDto.qbdate }" readonly="readonly"></td>
 						</td>
 					</tr>					
 					<tr>
@@ -55,8 +61,9 @@
 					</tr>
 					<tr>
 						<td colspan="2" align="center">
-							<input class="con_btn01" type="button" value="작성완료" onclick="writeCheck()">&nbsp;&nbsp;
-							<input class="con_btn01" type="button" value="취 소" onclick="javascript:window.location.href='board'">
+							<input class="con_btn01" type="button" value="수정" onclick="javascript:window.location.href='contentModify?qbnum=${boardDto.qbnum}'">&nbsp;&nbsp;
+							<input class="con_btn01" type="button" value="삭제" onclick="javascript:window.location.href='contentDelete?qbnum=${boardDto.qbnum}'">&nbsp;&nbsp;
+							<input class="con_btn01" type="button" value="글목록" onclick="javascript:window.location.href='board'">
 						</td>
 					</tr>
 				</form>

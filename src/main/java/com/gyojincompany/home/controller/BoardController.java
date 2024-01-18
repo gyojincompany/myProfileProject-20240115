@@ -57,9 +57,45 @@ public class BoardController {
 			model.addAttribute("memberDto", memberDto);
 		}
 		
-		
-		
 		return "writeForm";
+	}
+	
+	@GetMapping(value = "/write")
+	public String write(HttpServletRequest request, Model model) {
+		
+		BoardDao dao = sqlSession.getMapper(BoardDao.class);
+		
+		dao.writeDao(request.getParameter("qbmid"), request.getParameter("qbmname"), request.getParameter("qbmemail"), request.getParameter("qbtitle"), request.getParameter("qbcontent"));
+		
+		return "redirect:board";
+	}
+	
+	@GetMapping(value = "/contentView")
+	public String contentView(HttpServletRequest request, Model model, HttpServletResponse response) throws IOException {
+		
+		BoardDao dao = sqlSession.getMapper(BoardDao.class);
+		
+		QAboardDto boardDto = dao.contentViewDao(request.getParameter("qbnum"));
+		
+		if(boardDto == null) {//글이 삭제된 경우(db 검색 실패)
+			response.setContentType("text/html;charset=utf-8");//utf-8로 경고창에 출력될 문자셋 셋팅
+			response.setCharacterEncoding("utf-8");
+			
+			PrintWriter printout = response.getWriter();
+			
+			printout.println("<script>alert('"+ "해당 글은 삭제된 글입니다." +"');location.href='"+"board"+"';</script>");
+			printout.flush();
+		} else {
+			model.addAttribute("boardDto", boardDto);
+		}
+		
+		
+		return "contentView";
+	}
+	
+	@GetMapping(value = "/contentModify")
+	public String contentModify() {
+		return "contentModify";
 	}
 	
 	

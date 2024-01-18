@@ -44,7 +44,9 @@
 									<td class="bcontent" align="center">${boardDto.qbnum }</td>
 									<td class="bcontent" align="center">${boardDto.qbmid }</td>
 									<td class="bcontent" align="center">${boardDto.qbmname }</td>
-									<td class="bcontent">${boardDto.qbtitle }</td>
+									<td class="bcontent">
+										<a href="contentView?qbnum=${boardDto.qbnum }">${boardDto.qbtitle }</a>
+									</td>
 									<td class="bcontent" align="center">
 										<c:out value="${fn:substring(boardDto.qbdate,0,10)}" /> 
 									</td>
@@ -52,7 +54,7 @@
 								</c:forEach>
 								<tr>
 									<td colspan="5" align="right">
-										<input type="button" value="글쓰기" onclick="javascript:window.location.href='writeForm'">
+										<input class="con_btn01" type="button" value="글쓰기" onclick="javascript:window.location.href='writeForm'">
 									</td>
 								</tr>
 								

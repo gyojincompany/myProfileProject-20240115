@@ -13,6 +13,8 @@ td.con_text {
 	text-align: right;
 }
 
+
+
 td.con_text02 {
 	font-size: 20px;
 	font-family: malgun;
@@ -54,7 +56,16 @@ input.con_btn01:hover {
 	cursor: pointer;
 }
 
-
+textarea.btextarea {
+	border: 1px solid #365486;
+	background-color: #FFFFFF;
+	width: 250px;
+	height: 150px;
+	font-family: Arial;
+	font-size:20px;
+	color: #365486;
+	padding: 5px;
+}
 
 
 

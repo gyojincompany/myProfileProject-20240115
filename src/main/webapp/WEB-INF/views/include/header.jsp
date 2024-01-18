@@ -50,8 +50,8 @@
 		<tr height="20">
 			<c:if test="${sessionScope.sessionId != null}">
 				<td colspan="9" align="right">
-					<span style="font-family: Arial;font-size: 14px;color: #0B60B0;font-weight: bold;">
-						<c:out value="${sessionScope.sessionId }"></c:out></span>님 로그인 중
+					<span style="font-family: Arial;font-size: 14px;color: #6799FF;">
+						member : </span><span style="font-family: Arial;font-size: 14px;color: #0B60B0;font-weight: bold;"><c:out value="${sessionScope.sessionId }"></c:out></span>
 					 
 				</td>
 			</c:if>

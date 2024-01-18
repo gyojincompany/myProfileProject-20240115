@@ -94,8 +94,26 @@ public class BoardController {
 	}
 	
 	@GetMapping(value = "/contentModify")
-	public String contentModify() {
+	public String contentModify(HttpServletRequest request, Model model) {
+		
+		BoardDao dao = sqlSession.getMapper(BoardDao.class);
+		
+		QAboardDto boardDto = dao.contentViewDao(request.getParameter("qbnum"));
+		
+		model.addAttribute("boardDto", boardDto);
+		
 		return "contentModify";
+	}
+	
+	@GetMapping(value = "/contentModifyOk")
+	public String contentModifyOk(HttpServletRequest request, Model model) {
+		
+		BoardDao dao = sqlSession.getMapper(BoardDao.class);
+		dao.contentModifyDao(request.getParameter("qbnum"), request.getParameter("qbtitle"), request.getParameter("qbcontent"));
+		
+		model.addAttribute("boardDto", dao.contentViewDao(request.getParameter("qbnum")));
+		//수정된 글의 번호로 레코드를 다시 가져와 contentView.jsp에 전송
+		return "contentView";
 	}
 	
 	

@@ -20,4 +20,14 @@
 		SELECT * FROM qaboard WHERE qbnum=#{param1}
 	</select>
 	
+	<!-- 게시판 글 수정 -->
+	<update id="contentModifyDao">
+		UPDATE qaboard SET qbtitle=#{param2}, qbcontent=#{param3} WHERE qbnum=#{param1}
+	</update>
+	
+	
+	
+	
+	
+	
 </mapper>    

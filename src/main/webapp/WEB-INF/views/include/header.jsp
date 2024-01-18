@@ -38,7 +38,7 @@
 				<a href="#"><span class="menutext">profile</span></a>
 			</td>
 			<td width="4%" align="center">
-				<a href="#"><span class="menutext">board</span></a>
+				<a href="board"><span class="menutext">board</span></a>
 			</td>
 			<td width="4%" align="center">
 				<a href="#"><span class="menutext">contact</span></a>
@@ -50,7 +50,9 @@
 		<tr height="20">
 			<c:if test="${sessionScope.sessionId != null}">
 				<td colspan="9" align="right">
-					<c:out value="${sessionScope.sessionId }"></c:out>님 로그인 중 
+					<span style="font-family: Arial;font-size: 14px;color: #0B60B0;font-weight: bold;">
+						<c:out value="${sessionScope.sessionId }"></c:out></span>님 로그인 중
+					 
 				</td>
 			</c:if>
 		</tr>

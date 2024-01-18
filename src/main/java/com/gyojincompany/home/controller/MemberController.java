@@ -130,8 +130,9 @@ public class MemberController {
 		
 		model.addAttribute("memberDto", memberDto);//수정된 후의 회원정보가 modifyOk.jsp로 전송
 		
-		
 		return "modifyOk";
 	}
+	
+	
 
 }

@@ -25,6 +25,12 @@
 		UPDATE qaboard SET qbtitle=#{param2}, qbcontent=#{param3} WHERE qbnum=#{param1}
 	</update>
 	
+	<!-- 게시판 글 삭제 -->
+	<delete id="contentDeleteDao">
+		DELETE FROM qaboard WHERE qbnum=#{param1}
+	</delete>
+	
+		
 	
 	
 	

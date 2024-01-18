@@ -131,7 +131,31 @@ public class BoardController {
 		return "contentView";
 	}
 	
-	
+	@GetMapping(value = "/contentDelete")
+	public String contentDelete(HttpServletRequest request, Model model, HttpSession session, HttpServletResponse response) throws IOException {
+		
+		BoardDao dao = sqlSession.getMapper(BoardDao.class);
+		
+		String sid = (String) session.getAttribute("sessionId");//현재 로그인 중인 아이디
+		QAboardDto boardDto = dao.contentViewDao(request.getParameter("qbnum"));
+		//해당 번호 글의 모든 정보(글번호, 글쓴이아이디, 글쓴이이름, 글쓴이이메일, 글제목, 글내용, 글등록일)
+		
+		if(sid.equals(boardDto.getQbmid())) {// 글을 쓴 회원과 현재 로그인 중인 아이디 같은 경우->글수정 가능
+			dao.contentDeleteDao(request.getParameter("qbnum"));
+		} else if(sid.equals("admin")) {//만약 로그인중인 아이디가 관리자아이디(admin)인 경우
+			dao.contentDeleteDao(request.getParameter("qbnum"));
+		} else {//글을 쓴 회원과 현재 로그인 중인 아이디가 다른 경우->글수정 불가능
+			response.setContentType("text/html;charset=utf-8");//utf-8로 경고창에 출력될 문자셋 셋팅
+			response.setCharacterEncoding("utf-8");
+			
+			PrintWriter printout = response.getWriter();
+			
+			printout.println("<script>alert('"+ "글 삭제는 해당 글을 쓴 회원만 가능합니다." +"');location.href='"+"board"+"';</script>");
+			printout.flush();
+		}
+		
+		return "redirect:board";
+	}
 	
 	
 	

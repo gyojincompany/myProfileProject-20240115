@@ -5,9 +5,14 @@
 
 <mapper namespace="com.gyojincompany.home.dao.BoardDao">
 	
-	<!-- 게시판 모든 글 가져오기 -->
+	<!-- 게시판의 글 중 유저가 클릭한 페이지 번호에 해당하는 글들만 가져오기 -->
 	<select id="listDao" resultType="com.gyojincompany.home.dto.QAboardDto">
-		SELECT * FROM qaboard ORDER BY qbnum DESC
+		SELECT * FROM
+			(SELECT A.*, FLOOR(((ROWNUM-1)/#{param1})+1)PAGENUM ,ROWNUM
+				FROM
+					(SELECT * FROM qaboard ORDER BY qbnum DESC)A)
+						WHERE PAGENUM=#{param2}
+		
 	</select>
 	
 	<!-- 게시판 글 쓰기 -->

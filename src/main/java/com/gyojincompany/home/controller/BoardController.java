@@ -43,7 +43,7 @@ public class BoardController {
 		
 		PageDto pageDto = new PageDto(criteria, total);
 		
-		List<QAboardDto> dtos = dao.listDao();
+		List<QAboardDto> dtos = dao.listDao(criteria.getAmount(), criteria.getPageNum());
 		
 		model.addAttribute("list", dtos);
 		model.addAttribute("pageDto", pageDto);

@@ -61,7 +61,7 @@
 								<tr>
 									<td colspan="5" align="center">
 										<c:if test="${pageDto.prev }">
-											◀ prev&nbsp;&nbsp;
+											<a href="board?pageNum=${pageDto.startPage-10 }">◀ prev</a>&nbsp;&nbsp;
 										</c:if>
 										
 										<c:forEach begin="${pageDto.startPage }" end="${pageDto.endPage }" var="pageNumber">
@@ -76,7 +76,7 @@
 										</c:forEach>
 										
 										<c:if test="${pageDto.next }">
-											 next ▶
+											 <a href="board?pageNum=${pageDto.startPage+10 }">next ▶</a>
 										</c:if>
 									</td>
 								</tr>								

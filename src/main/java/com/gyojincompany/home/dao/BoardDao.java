@@ -11,5 +11,6 @@ public interface BoardDao {
 	public QAboardDto contentViewDao(String qbnum);//글 번호로 해당 글의 레코드 반환
 	public void contentModifyDao(String qbnum, String qbtitle, String qbcontent);//글 수정
 	public void contentDeleteDao(String qbnum);//글 삭제
+	public int boardAllCountDao();//게시판 내 모든 글의 총 개수를 반환 
 
 }

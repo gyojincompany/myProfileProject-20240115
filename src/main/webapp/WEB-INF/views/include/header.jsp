@@ -35,13 +35,13 @@
 			</c:choose>			
 			
 			<td width="4%" align="center">
-				<a href="#"><span class="menutext">profile</span></a>
+				<a href="profile"><span class="menutext">profile</span></a>
 			</td>
 			<td width="4%" align="center">
 				<a href="board"><span class="menutext">board</span></a>
 			</td>
 			<td width="4%" align="center">
-				<a href="#"><span class="menutext">contact</span></a>
+				<a href="contact"><span class="menutext">contact</span></a>
 			</td>
 			<td width="3%">
 				&nbsp;

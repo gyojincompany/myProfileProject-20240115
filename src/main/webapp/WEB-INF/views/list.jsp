@@ -57,7 +57,29 @@
 										<input class="con_btn01" type="button" value="글쓰기" onclick="javascript:window.location.href='writeForm'">
 									</td>
 								</tr>
-								
+								<!-- 페이지 표시 출력 -->
+								<tr>
+									<td colspan="5" align="center">
+										<c:if test="${pageDto.prev }">
+											◀ prev&nbsp;&nbsp;
+										</c:if>
+										
+										<c:forEach begin="${pageDto.startPage }" end="${pageDto.endPage }" var="pageNumber">
+											<c:choose>
+												<c:when test="${currPage == pageNumber}">
+													<span style="background-color: #7FC7D9;color: white;">${pageNumber}</span>&nbsp;&nbsp;
+												</c:when>
+												<c:otherwise>												
+													<a href="board?pageNum=${pageNumber}">${pageNumber}</a>&nbsp;&nbsp;
+												</c:otherwise>
+											</c:choose>
+										</c:forEach>
+										
+										<c:if test="${pageDto.next }">
+											 next ▶
+										</c:if>
+									</td>
+								</tr>								
 							</table>
 						</td>
 					</tr>

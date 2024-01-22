@@ -30,7 +30,10 @@
 		DELETE FROM qaboard WHERE qbnum=#{param1}
 	</delete>
 	
-		
+	<!-- 총 게시판 글의 수 가져오기 -->
+	<select id="boardAllCountDao" resultType="int">
+		SELECT count(*) FROM qaboard
+	</select>		
 	
 	
 	

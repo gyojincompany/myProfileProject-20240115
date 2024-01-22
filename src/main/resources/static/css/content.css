@@ -67,6 +67,24 @@ textarea.btextarea {
 	padding: 5px;
 }
 
+a.pageNumber:link {	
+	font-family:Arial;
+	font-size: 18px;
+	color: #365486;	
+}
 
+a.pageNumber:hover {
+	font-family:Arial;
+	font-size: 18px;
+	color: #365486;	
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+a.pageNumber:visited {
+	font-family:Arial;
+	font-size: 18px;
+	color: #365486;
+}
 
 

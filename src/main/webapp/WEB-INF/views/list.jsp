@@ -44,8 +44,17 @@
 									<td class="bcontent" align="center">${boardDto.qbnum }</td>
 									<td class="bcontent" align="center">${boardDto.qbmid }</td>
 									<td class="bcontent" align="center">${boardDto.qbmname }</td>
-									<td class="bcontent">
-										<a href="contentView?qbnum=${boardDto.qbnum }">${boardDto.qbtitle }</a>
+									<td class="bcontent">										
+										<a href="contentView?qbnum=${boardDto.qbnum }">
+											<c:choose>
+												<c:when test="${fn:length(boardDto.qbtitle) > 25 }">
+													<c:out value="${fn:substring(boardDto.qbtitle,0,24)}"></c:out>... 
+												</c:when>
+												<c:otherwise>
+													${boardDto.qbtitle}
+												</c:otherwise>
+											</c:choose>
+										</a>										
 									</td>
 									<td class="bcontent" align="center">
 										<c:out value="${fn:substring(boardDto.qbdate,0,10)}" /> 
@@ -70,7 +79,7 @@
 													<span style="background-color: #7FC7D9;color: white;">${pageNumber}</span>&nbsp;&nbsp;
 												</c:when>
 												<c:otherwise>												
-													<a href="board?pageNum=${pageNumber}">${pageNumber}</a>&nbsp;&nbsp;
+													<a class="pageNumber" href="board?pageNum=${pageNumber}">${pageNumber}</a>&nbsp;&nbsp;
 												</c:otherwise>
 											</c:choose>
 										</c:forEach>

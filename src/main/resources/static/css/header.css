@@ -20,3 +20,8 @@ a:hover {
 	text-decoration: underline;
 	color: #DCF2F1;
 }
+
+a:visited {
+	text-decoration: none;
+	color: #e4e4e4;
+}
